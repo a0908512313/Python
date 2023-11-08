@@ -1,7 +1,7 @@
 number = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 
 password = input('Please enter the password : ')
-ArrayPassword = password.split()
+ArrayPassword = [char for char in password]
 
 cracked = []
 
