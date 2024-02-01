@@ -1,57 +1,22 @@
 import datetime
-import tkinter as tk
+import calendar
+today = datetime.date.today()
+age = input('輸入生日 ( YYYY/MM/DD ) : ')
+age_list = age.split('/')
+year = today.year - int(age_list[0])
+month = today.month - int(age_list[1])
+if month < 0:
+    year = year - 1
+    month = 12 + month
+day_list = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+if calendar.isleap(today.year):
+    day_list[1] = 29
+day = today.day - int(age_list[2])
+if day < 0:
+    month = month - 1
+    if month < 0:
+        year = year - 1
+        month = 12 + month
+    day = day_list[month] + day
 
-window = tk.Tk()
-window.geometry = ('1080x960')
-window.title(' Age Calculator App ')
-name = tk.Label(text='name')
-year = tk.Label(text='year')
-month = tk.Label(text='month')
-date = tk.Label(text='day')
-
-name.grid(column=0, row=1)
-year.grid(column=0, row=2)
-month.grid(column=0, row=3)
-date.grid(column=0, row=4)
-
-nameEntry = tk.Entry()
-yearEntry = tk.Entry()
-monthEntry = tk.Entry()
-dateEntry = tk.Entry()
-
-nameEntry.grid(column=1, row=1)
-yearEntry.grid(column=1, row=2)
-monthEntry.grid(column=1, row=3)
-dateEntry.grid(column=1, row=4)
-
-
-def getInput():
-    name = nameEntry.get()
-    monkey = Person(str(nameEntry), datetime.date((int(yearEntry.get())),
-                                                  int(monthEntry.get()),
-                                                  int(dateEntry.get())))
-
-    textArea = tk.Text(master=window, height=10, width=25)
-    textArea.grid(column=1, row=6)
-    answer = f' Heyy {monkey}!!!. You are {age} year old!!!'.format(
-        monkey=monkey.name(), age=monkey.age())
-
-    textArea.insert(tk.END, answer)
-
-
-button = tk.Button(window, text='Calculate Age', command=getInput, bg='pink')
-button.grid(column=1, row=5)
-
-
-class Person:
-    def __init__(self, name, birthdate):
-        self.name = name
-        self.birthdate = birthdate
-
-    def age(self):
-        today = datetime.date.today()
-        age = today.year - self.birthdate.year
-        return age
-
-
-window.mainloop()
+print(f'{year} 歲 {month} 個月 {day} 天')
