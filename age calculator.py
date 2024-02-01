@@ -1,7 +1,7 @@
 import datetime
 import calendar
 today = datetime.date.today()
-age = input('輸入生日 ( YYYY/MM/DD ) : ')
+age = input('輸入生日 ( YYYY/MM/DD ) :')
 age_list = age.split('/')
 year = today.year - int(age_list[0])
 month = today.month - int(age_list[1])
