@@ -1,2 +1,2 @@
 python -m auto_py_to_exe
-輸入在終端機)
+輸入在終端機
