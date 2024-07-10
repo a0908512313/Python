@@ -7,8 +7,9 @@ def main(page: Page):
     page.horizontal_alignment = MainAxisAlignment.CENTER
 
     def add_task(e):
+        new_task_value = new_task.value
         page.add(Checkbox(label=new_task_value))
-        new_task_value = ''
+        new_task.value = ''
         page.update()
 
     new_task = TextField(hint_text="Please enter the task")
