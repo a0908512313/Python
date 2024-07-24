@@ -133,7 +133,7 @@ btn_frame = tk.Frame(window)
 btn_frame.pack(pady=20)
 
 # Create a button to go to the previous song
-btn_previous = tk.CTkButton(
+btn_previous = tk.Button(
     btn_frame, text="<", command=previous_song, width=50, font=("TkDefaultFont", 18))
 
 btn_previous.pack(side=tk.LEFT, padx=5)
