@@ -35,5 +35,6 @@
 		"editor.defaultFormatter": "ms-python.autopep8"
 	},
 	"python.formatting.provider": "none",
-	"python.REPL.enableREPLSmartSend": false
+	"python.REPL.enableREPLSmartSend": false,
+	"cSpell.words": ["pytube"]
 }
