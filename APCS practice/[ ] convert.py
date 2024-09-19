@@ -7,34 +7,27 @@ move = list(map(int, input().split()))
 
 
 def mir(data):
-    def swap(data: list, a, b):
-        temp = data[a]
-        data[a] = data[b]
-        data[b] = temp
-        return data
-
-    for i in range(len(data) if data % 2 == 0 else (len(data) - 1) // 2):
-        swap(data, i, len(data) - 1 - i)
-    return data
+    return data[::-1]
 
 
 def rotate(data):
-    temp = [len(data[0])][len(data)]
-    for i in range(len(data)):
-        for j in range(len(data[0])):
-            temp[i][j] = temp[j][len(data) - 1 - i]
+    row = len(data)
+    col = len(data[0])
+    temp = [[0 for _ in range(row) for _ in range(col)]]
+    for i in range(row):
+        for j in range(col):
+            temp[j][row - 1 - i] = data[i][j]
     return temp
 
 
 for i in move:
     if i == 1:
         data = mir(data)
-    elif i == 2:
+    else:
         data = rotate(data)
 
 row = len(data)
 col = len(data[0])
 print(row, col)
 for i in data:
-    temp = i.join(' ')
-    print(temp)
+    print(' '.join(map(str, i)))

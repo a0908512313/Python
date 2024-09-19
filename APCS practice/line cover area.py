@@ -3,7 +3,7 @@ data = list()
 N = list()
 for _ in range(n):
     temp = list(map(int, input().split()))
-    n.append(temp)
+    data.append(temp)
 data.sort(key=lambda x: x[0])
 i = 0
 j = 1
@@ -14,9 +14,9 @@ while j < n:
         N.append(data[i])
         i = j
     else:
-        data[i][1] = max(FR, RL)
+        data[i][1] = max(FR, RR)
     j += 1
-n.append(data[i])
+N.append(data[i])
 result = 0
 for i in N:
     result += (i[1] - i[0])

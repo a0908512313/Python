@@ -1,0 +1,16 @@
+成績指標 done
+矩陣轉換  https://zerojudge.tw/ShowProblem?problemid=b965
+三角形辨別 done
+最大和 done
+定時K彈  https://zerojudge.tw/ShowProblem?problemid=c296
+覆蓋線段長度  https://zerojudge.tw/ShowProblem?problemid=b966
+秘密差 done
+邏輯運算子  https://zerojudge.tw/ShowProblem?problemid=c461
+
+row = len(data)
+    col = len(data[0])
+    temp = [[0 for _ in range(row)] for _ in range(col)]
+    for i in range(row):
+        for j in range(col):
+            temp[j][row - 1 - i] = data[i][j]
+    return temp
