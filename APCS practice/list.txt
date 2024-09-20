@@ -5,7 +5,7 @@
 定時K彈  https://zerojudge.tw/ShowProblem?problemid=c296
 覆蓋線段長度  https://zerojudge.tw/ShowProblem?problemid=b966
 秘密差 done
-邏輯運算子  https://zerojudge.tw/ShowProblem?problemid=c461
+邏輯運算子 done
 
 row = len(data)
     col = len(data[0])
