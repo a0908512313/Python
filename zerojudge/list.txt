@@ -1,0 +1,32 @@
+https://zerojudge.tw/ShowProblem?problemid=b606
+
+https://zerojudge.tw/ShowProblem?problemid=a291
+
+https://zerojudge.tw/ShowProblem?problemid=n631
+
+https://zerojudge.tw/ShowProblem?problemid=b966
+
+https://zerojudge.tw/ShowProblem?problemid=a252
+
+INPUT = list()
+while True:
+    n = input()  # 讀取數列長度
+    if n == '0':  # 當輸入 0 時結束
+        break
+    numbers = input()  # 讀取數列
+    INPUT.append((int(n), list(map(int, numbers.split()))))  # 將每組數據存入INPUT
+
+for n, nums in INPUT:
+    nums.sort()  # 將數列排序
+    result = 0
+    # 處理偶數長度的數列
+    if n % 2 == 0:
+        for i in range(0, n, 2):
+            result += (nums[i] + nums[i+1])
+    # 處理奇數長度的數列
+    else:
+        for i in range(0, n-1, 2):
+            result += (nums[i] + nums[i+1])
+        result += nums[-1]  # 加上最後一個數字
+    
+    print(result)
