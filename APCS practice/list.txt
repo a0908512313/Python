@@ -6,7 +6,7 @@
 覆蓋線段長度 done
 秘密差 done
 邏輯運算子 https://zerojudge.tw/ShowProblem?problemid=c461
-特技表演 https://zerojudge.tw/ShowProblem?problemid=o076
+特技表演 done
 後花園 https://zerojudge.tw/ShowProblem?problemid=f072
 
 row = len(data)
