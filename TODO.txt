@@ -1,5 +1,0 @@
-file organizer : file -> folder
-
-unit converter -> with GUI
-
-qrcode generator
